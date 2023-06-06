@@ -52,9 +52,9 @@ export const SearchPage = () => {
 
           {
             (q === '')
-            ? <div className="alert alert-primary">Search a Hero</div>
+            ? <div className="alert alert-primary animate__animated animate__fadeIn">Search a Hero</div>
             : (heroes.length === 0)
-            && <div className="alert alert-danger"><b>There's no results <p>{q}</p></b></div>
+            && <div className="alert alert-danger animate__animated animate__fadeIn"><b>There's no results <p>{q}</p></b></div>
           }
 
           {
