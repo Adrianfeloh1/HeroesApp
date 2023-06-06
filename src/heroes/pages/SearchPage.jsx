@@ -18,7 +18,7 @@ export const SearchPage = () => {
   const onSearchSubmit = (event) => {
     event.preventDefault();
 
-    if (searchText.trim().length <= 1) return;
+    //if (searchText.trim().length <= 1) return;
 
     navigate(`?q=${searchText.toLowerCase().trim()}`);
   };
@@ -48,15 +48,14 @@ export const SearchPage = () => {
 
         <div className="col-7">
           <h4>Results</h4>
-          <hr />
+          <hr />            
 
-          <div className="alert alert-primary">Search a Hero</div>
-
-          <div className="alert alert-danger">
-            <b>
-              There's no results <p>{q}</p>
-            </b>
-          </div>
+          {
+            (q === '')
+            ? <div className="alert alert-primary">Search a Hero</div>
+            : (heroes.length === 0)
+            && <div className="alert alert-danger"><b>There's no results <p>{q}</p></b></div>
+          }
 
           {
             heroes.map( hero => (
